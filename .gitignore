@@ -1,15 +1,1 @@
-.venv/pyvenv.cfg
-.venv/lib/
-.venv/share/
-.venv/bin/f2py
-.venv/bin/f2py3
-.venv/bin/f2py3.8
-.venv/bin/fonttools
-.venv/bin/natsort
-.venv/bin/numba
-.venv/bin/pycc
-.venv/bin/pyftmerge
-.venv/bin/pyftsubset
-.venv/bin/scanpy
-.venv/bin/tqdm
-.venv/bin/ttx
+.venv/
