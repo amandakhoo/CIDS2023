@@ -6,7 +6,7 @@ WORKDIR /app
 # first since that shouldn't change often, letting us reuse
 # previously used Docker layers that have our dependencies.
 COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements
+RUN pip3 install -r requirements.txt
 
 COPY . .
 
