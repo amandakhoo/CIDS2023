@@ -6,8 +6,9 @@ def main(filepath):
         notebook_content = json.load(notebook)
 
         for cell in notebook_content['cells']:
-            eval(cell['source'])
+            block = "\n".join(cell['source'])
+            exec(block)
 
 
 if __name__ == "__main__":
-    main(sys.argv[0])
+    main(sys.argv[1])
