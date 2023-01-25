@@ -14,6 +14,3 @@ If this doesn't work, please let Preston know.
 The thing to do will probably be to remove `.venv`,
 make your own with `python3 -m venv .venv`
 then to follow the steps above.
-
-
-## Sam made this heading to test commits.
