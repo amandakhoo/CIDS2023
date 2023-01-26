@@ -10,6 +10,8 @@ Python, version 3.8 (from https://github.com/amandakhoo/CIDS2023/blob/2e0686d761
 ## Software dependencies
 
 To run this software, make sure that the data is available in the root directory.
+`download-data.sh` will download this for you if you have `wget` installed.
+If that doesn't work, try clicking on the link that `wget` operates on and downloading manually.
 
 You can run this code either locally or through `docker`.
 To run locally, ensure that you have `python3` installed,
