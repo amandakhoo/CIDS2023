@@ -1,3 +1,5 @@
 .venv/
 .DS_Store
 code/sc_training.h5ad
+./saved_models/**
+.ipynb_checkpoints/.gitignore-checkpoint
