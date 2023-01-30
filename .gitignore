@@ -7,3 +7,4 @@ code/sc_training.h5ad
 .ipynb_checkpoints/*
 data/*
 figures/*
+multi_graph.pkl
