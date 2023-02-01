@@ -40,14 +40,26 @@ class TrainingData(Dataset):
         KOgene = self.KOgenes[rand_gene_idx]
 
         # get embedding of KO gene
-        gene_emb = #TODO
+            #emb_idx is the index of the gene embeddings
+        emb_idx = np.load("./gene_embedding/entity2labeldict_TransE_nepochs_128.npy",
+                          allow_pickle=True).item()
+        
+            #Embeddings of the nodes:
+        emb = np.load("./gene_embedding/entities_kg_emb_TransE_nepochs_128.npy")
+        
+        gene_emb = emb[emb_idx[KOgene]]
 
         # get gene expression for a random unperturbed cell
-        rand_index = random.randint(0, len(self.n_control) - 1)
-        X = np.array(self.control.iloc[rand_index])
+        rand_index = random.randint(0, len(self.unperturb_seq) - 1)
+        X = np.array(self.unperturb_seq.iloc[rand_index])
 
         # get gene expression for a random perturbed cell (with selected gene knocked out)
-        y = #TODO
+            #KO_idx is the index of the selected perturbed cell
+        KO_idx = np.load('./data/perturbed_gene_expression_labels.npy',
+                         allow_pickle = True)
+        KO_rand_index = random.randint(0, len(self.perturb_seq) - 1)
+        
+        y = np.array(self.perturb_seq.iloc[KO_rand_index])
 
         return gene_emb, X, y
 
@@ -55,8 +67,8 @@ class TrainingData(Dataset):
         return self.n_KOgenes
 
 
-dataset = TrainingData("data/gene_embeddings.csv",
-                       "data/perturb_gene_expression.csv",
-                       "data/unperturbed_gene_expression.csv"
+dataset = TrainingData("./data/gene_embeddings.csv",
+                       "./data/perturbed_gene_expression.csv",
+                       "./data/unperturbed_gene_expression.csv"
                       )  
 print(len(dataset))
