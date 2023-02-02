@@ -86,8 +86,9 @@ class Discriminator(nn.Module):
 # Training
 ###############################################################################
 
-def train():
+def train(learning_rate):
 
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     # Create Models
     G = Generator(GENE_EXPRESSION_VEC+GENE_EMBED_DIM, GENE_EXPRESSION_VEC).to(device)
     D = Discriminator(GENE_EXPRESSION_VEC, 1).to(device)
@@ -95,12 +96,12 @@ def train():
     # Define Losses
     lossG = nn.BCELoss()
     lossD = nn.BCELoss()
-
-	alpha = 0.5
+    
+    alpha = 0.5
 
     # Create Optimizer
     param_list = list(G.parameters()) + list(D.parameters())
-
+    
     optimizer_all = torch.optim.Adam(param_list, lr=learning_rate)
 
     # Train Models
