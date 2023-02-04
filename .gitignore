@@ -8,3 +8,4 @@ code/sc_training.h5ad
 data/*
 figures/*
 multi_graph.pkl
+.ipynb_checkpoints
