@@ -11,7 +11,28 @@ pip install -U pip
 pip install -r requirements.txt
 ```
 
-If this doesn't work, please let Preston know.
+If this doesn't work, please let us know.
+
+## Downloading data dependencies
+
+Please download our saved models and data from
+https://drive.google.com/drive/folders/1eJ0uKNQSzOix2-2oIISwoiWNwfLEWxDs.
+Inside there should be saved models from saving y'all the trouble of re-training
+and the data that we used for this challenge.
+
+## Quick tour
+
+`classifier.ipynb` trains an svm for classification and saves the trained model. A pre-trained model is available in the google drivel link.
+
+`GAN_SVM_connector.ipynb` runs the main logic for challenge 2. It requires
+data and saved models from other steps and outputs csv files for the various
+parts of challenge 2.
+
+`GAN.ipynb` trains the GAN we use to generate cell samples.
+
+`mydataloader.py` loads the data and gene embeddings into a format that our GAN can understand.
+
+`run_notebook.py` is a utility file for running jupyter notebooks from the command line.
 
 ## To run with Docker
 
@@ -28,10 +49,3 @@ with the training data in the directory from which you run the command.
 (Right now we just have test infrastructure in place
 that emulates outputting the `.csv` file. Try running
 `docker-compose up` now for a friendly greeting!)
-
-
-#### (S)am's notes if you (like him) are having a lot of trouble with Git remote permissions:
-- Set up to track the remote using SSH
-- Set up private/public key pair if not already set up
-- Make sure the private key is being used by the ssh-agent, a la: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux#adding-your-ssh-key-to-the-ssh-agent
-

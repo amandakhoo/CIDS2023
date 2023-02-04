@@ -5,7 +5,7 @@ Our team acknowledges helpful discussions and code contributions from Dhananjay 
 '''
 
 from torch.utils.data import Dataset
-from mydataloader import dataset
+from challenge2.part_c.code.mydataloader import dataset
 
 import torch
 import torch.nn as nn
