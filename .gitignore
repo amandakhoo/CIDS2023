@@ -9,9 +9,5 @@ data/*
 figures/*
 multi_graph.pkl
 .ipynb_checkpoints
-challenge2/part_c/code/data
-challenge2/part_c/code/gene_embedding
-challenge2/part_c/code/saved_models
-challenge2/part_c/code/GAN_data
 
 *.zip

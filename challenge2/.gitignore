@@ -1,3 +1,3 @@
-./partc/code/data
-./partc/code/gene_embedding
-./partc/code/saved_models
+part_c/code/data/*
+part_c/code/gene_embedding/*
+part_c/code/saved_models/*
