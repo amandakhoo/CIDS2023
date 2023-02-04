@@ -1,3 +1,9 @@
+'''
+Our team acknowledges helpful discussions and code contributions from Dhananjay Bhaskar, specifically in the following areas:
+- TransE embedding of mouse genes using a graph constructed from Pathway Commons
+- Initial implementation of the conditional GAN and dataloader to predict perturbed gene expression
+'''
+
 from torch.utils.data import Dataset
 from mydataloader import dataset
 
@@ -96,12 +102,12 @@ def train(learning_rate):
     # Define Losses
     lossG = nn.BCELoss()
     lossD = nn.BCELoss()
-    
+
     alpha = 0.5
 
     # Create Optimizer
     param_list = list(G.parameters()) + list(D.parameters())
-    
+
     optimizer_all = torch.optim.Adam(param_list, lr=learning_rate)
 
     # Train Models
@@ -126,9 +132,9 @@ def train(learning_rate):
             fake = G(batch_X.to(device), KO_gene)
 
             # get discriminator decision: real or fake
-            decision_fake = D(fake)        
+            decision_fake = D(fake)
             decision_real = D(batch_Y.to(device))
-            
+
 			# Get Losses
             loss_G = lossG(decision_fake, torch.ones_like(decision_fake).to(device))
             loss_D = .5 * lossD(decision_real, torch.ones_like(decision_real).to(device))
@@ -162,7 +168,7 @@ def train(learning_rate):
 ###############################################################################
 
 if __name__ == '__main__':
-    
+
 	print("Starting...")
 	G, D  = train()
 
